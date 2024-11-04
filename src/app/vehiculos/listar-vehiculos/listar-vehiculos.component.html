@@ -1,1 +1,24 @@
-<p>listar-vehiculos works!</p>
+<div class="container mt-4">
+  <h2 class="text-center mb-4">Vehículos de Segunda Mano en Venta</h2>
+  <table class="table table-bordered">
+      <thead class="table-dark">
+          <tr>
+              <th scope="col" class="table-header">#</th>
+              <th scope="col" class="table-header">Marca</th>
+              <th scope="col" class="table-header">Línea</th>
+              <th scope="col" class="table-header">Kilometraje</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let vehiculo of vehiculos; index as i">
+              <td class="table-number">{{ i + 1 }}</td>
+              <td class="table-data">{{ vehiculo.marca }}</td>
+              <td class="table-data">{{ vehiculo.linea }}</td>
+              <td class="table-data">{{ vehiculo.modelo }}</td>
+          </tr>
+      </tbody>
+  </table>
+  <div *ngFor="let marca of marcasCount | keyvalue" class="mt-3">
+      <p class="fw-bold">{{ marca.key }}: {{ marca.value }} vehículos</p>
+  </div>
+</div>
